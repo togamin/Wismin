@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		0BCB01AB98804A56E52355E7 /* Pods_Wismin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC29F0B171B4B487910C00F /* Pods_Wismin.framework */; };
 		B76D93432179D518007FDA2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D93422179D518007FDA2D /* AppDelegate.swift */; };
-		B76D93452179D518007FDA2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D93442179D518007FDA2D /* ViewController.swift */; };
 		B76D93482179D518007FDA2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76D93462179D518007FDA2D /* Main.storyboard */; };
 		B76D934A2179D51D007FDA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B76D93492179D51D007FDA2D /* Assets.xcassets */; };
 		B76D934D2179D51D007FDA2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76D934B2179D51D007FDA2D /* LaunchScreen.storyboard */; };
 		B76D93552179D64E007FDA2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B76D93542179D64E007FDA2D /* GoogleService-Info.plist */; };
+		B76D93582179F127007FDA2D /* backImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76D93572179F127007FDA2D /* backImage.jpg */; };
+		B76D93602179F28B007FDA2D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D935F2179F28B007FDA2D /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +22,13 @@
 		1BD63043638ED3C0456ADF0B /* Pods-Wismin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wismin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wismin/Pods-Wismin.release.xcconfig"; sourceTree = "<group>"; };
 		B76D933F2179D518007FDA2D /* Wismin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wismin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76D93422179D518007FDA2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B76D93442179D518007FDA2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B76D93472179D518007FDA2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B76D93492179D51D007FDA2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B76D934C2179D51D007FDA2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B76D934E2179D51D007FDA2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B76D93542179D64E007FDA2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B76D93572179F127007FDA2D /* backImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backImage.jpg; sourceTree = "<group>"; };
+		B76D935F2179F28B007FDA2D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = /Users/togamiyuki/Desktop/iOSdevelop/Wismin/Wismin/Wismin/LoginViewController.swift; sourceTree = "<absolute>"; };
 		BCC29F0B171B4B487910C00F /* Pods_Wismin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wismin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,14 +74,23 @@
 			isa = PBXGroup;
 			children = (
 				B76D93422179D518007FDA2D /* AppDelegate.swift */,
-				B76D93442179D518007FDA2D /* ViewController.swift */,
+				B76D935F2179F28B007FDA2D /* LoginViewController.swift */,
 				B76D93462179D518007FDA2D /* Main.storyboard */,
 				B76D93492179D51D007FDA2D /* Assets.xcassets */,
 				B76D934B2179D51D007FDA2D /* LaunchScreen.storyboard */,
 				B76D934E2179D51D007FDA2D /* Info.plist */,
 				B76D93542179D64E007FDA2D /* GoogleService-Info.plist */,
+				B76D93562179F10A007FDA2D /* Images */,
 			);
 			path = Wismin;
+			sourceTree = "<group>";
+		};
+		B76D93562179F10A007FDA2D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B76D93572179F127007FDA2D /* backImage.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		D226D630DDE27FD8F14DF822 /* Pods */ = {
@@ -103,6 +114,7 @@
 				B76D933C2179D518007FDA2D /* Frameworks */,
 				B76D933D2179D518007FDA2D /* Resources */,
 				A62DDAAD605DB12261229690 /* [CP] Embed Pods Frameworks */,
+				B2326C3A9267EE7FCBAF9CA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,6 +165,7 @@
 			files = (
 				B76D934D2179D51D007FDA2D /* LaunchScreen.storyboard in Resources */,
 				B76D93552179D64E007FDA2D /* GoogleService-Info.plist in Resources */,
+				B76D93582179F127007FDA2D /* backImage.jpg in Resources */,
 				B76D934A2179D51D007FDA2D /* Assets.xcassets in Resources */,
 				B76D93482179D518007FDA2D /* Main.storyboard in Resources */,
 			);
@@ -186,19 +199,41 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wismin/Pods-Wismin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wismin/Pods-Wismin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2326C3A9267EE7FCBAF9CA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wismin/Pods-Wismin-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wismin/Pods-Wismin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -208,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76D93452179D518007FDA2D /* ViewController.swift in Sources */,
+				B76D93602179F28B007FDA2D /* LoginViewController.swift in Sources */,
 				B76D93432179D518007FDA2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
