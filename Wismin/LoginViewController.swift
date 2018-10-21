@@ -8,9 +8,13 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import TwitterKit
 
 class LoginViewController: UIViewController {
 
+    var screenWidth = UIScreen.main.bounds.size.width
+    var screenHeight = UIScreen.main.bounds.size.height
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,11 +23,9 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
         //グーグルのボタンを追加
-        let googleBtn = GIDSignInButton()
-        var screenWidth = self.view.frame.size.width
-        var screenHeight = self.view.frame.size.height
-        googleBtn.frame = CGRect(x:screenWidth*0.1,y:screenHeight*2/3,width:screenWidth - screenWidth*0.2,height:60)
-        view.addSubview(googleBtn)
+        GoogleLoginBtn()
+        //Twitterログインボタンを追加
+        TwitterLoginBtn()
         
         
     }
@@ -39,6 +41,13 @@ class LoginViewController: UIViewController {
 
 //Googleログインに関する処理
 extension LoginViewController:GIDSignInUIDelegate,GIDSignInDelegate{
+    //Googleログインのボタン
+    func GoogleLoginBtn(){
+        let googleBtn = GIDSignInButton()
+        googleBtn.frame = CGRect(x:screenWidth*0.1,y:screenHeight*2/3,width:screenWidth - screenWidth*0.2,height:48)
+        view.addSubview(googleBtn)
+    }
+    
     //Googleログイン時の処理
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         //Googleログイン時エラーが発生したら、エラーを返し、この関数から抜ける
@@ -70,3 +79,33 @@ extension LoginViewController:GIDSignInUIDelegate,GIDSignInDelegate{
         }
     }
 }
+
+//Twitterログインに関する関数
+extension LoginViewController{
+    func TwitterLoginBtn(){
+        
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                let authToken = session?.authToken
+                let authTokenSecret = session?.authTokenSecret
+                print("memo:",authToken)
+                let credential = TwitterAuthProvider.credential(withToken: authToken!, secret: authTokenSecret!)
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let error = error {
+                        print("memo:FirebaseへTwitterから得たトークン保存時にエラー",error)
+                        return
+                    }
+                    print("memo:Twitterログイン成功")
+                }
+            } else {
+                print("memo:Twitterログインエラー")
+            }
+        })
+        logInButton.frame = CGRect(x:screenWidth*0.11,y:screenHeight*2/3 + 60,width:screenWidth - screenWidth*0.22,height:45)
+        view.addSubview(logInButton)
+    }
+}
+
+
+
+

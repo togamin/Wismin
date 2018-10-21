@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -17,7 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        //Firebaseの初期設定
         FirebaseApp.configure()
+        //TwitterKitの初期設定
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"", consumerSecret:"")
         
         return true
     }
@@ -25,12 +29,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     //登録したURLスキームのURLを開き、サインインに関する情報を受け取る。
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
+
+            print("memo:テスト１")
+            if GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:]){
+                print("memo:googleサインイン")
+                return true
+            }
             
-            var Google = GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
-            print("memo:googleサインイン",Google)
-            return Google
+            if TWTRTwitter.sharedInstance().application(application, open: url, options: options) {
+                print("memo:Twitterサインイン")
+                return true
+            }
+            print("memo:テスト２")
+            return false
     }
-    
+
     
     
 
