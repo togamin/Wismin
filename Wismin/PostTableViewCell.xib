@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="354" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="Wismin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="354"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="PostTableViewCell" customModule="Wismin" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="324" height="353.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wismintest01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TZ4-ex-USx">
+                        <rect key="frame" x="0.0" y="43" width="324" height="269"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="TZ4-ex-USx" secondAttribute="height" multiplier="324:269" id="Mzb-oz-TuW"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkG-gV-8XS">
+                        <rect key="frame" x="9" y="315.5" width="29" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="29" id="F7p-RN-ezf"/>
+                            <constraint firstAttribute="height" constant="29" id="RA0-Mu-7v6"/>
+                        </constraints>
+                        <state key="normal" title="Inspire" image="GoodFalse.png"/>
+                        <connections>
+                            <action selector="goodBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cxt-ML-bzJ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrx-gd-esb">
+                        <rect key="frame" x="286" y="315" width="29" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="29" id="eG3-Ch-Ve1"/>
+                            <constraint firstAttribute="height" constant="29" id="i0g-Kd-PLT"/>
+                        </constraints>
+                        <state key="normal" title="Share" image="Share.png"/>
+                        <connections>
+                            <action selector="shareBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UAj-hp-6xu"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018/11/07 21:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzj-ah-OfP">
+                        <rect key="frame" x="9" y="19" width="97" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wismintest02.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x68-Om-ZZh">
+                        <rect key="frame" x="9" y="52.5" width="39" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="39" id="Apd-bP-rDp"/>
+                            <constraint firstAttribute="height" constant="39" id="dd1-nh-W8V"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-Ix-LOJ">
+                        <rect key="frame" x="41" y="326.5" width="21" height="15.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Lc-2Ys">
+                        <rect key="frame" x="286" y="3" width="29" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="29" id="AVI-SR-xFF"/>
+                            <constraint firstAttribute="height" constant="29" id="ZkC-sj-t51"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="Send.png"/>
+                        <connections>
+                            <action selector="inspireBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Tpv-nX-J71"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inspire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t82-5A-rAs">
+                        <rect key="frame" x="276" y="24" width="46" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="by togaminnnn" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgu-iY-Gi2">
+                        <rect key="frame" x="9" y="281" width="306" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天才とは、99%の努力を無にする1%のひらめきである" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV3-hm-vUU">
+                        <rect key="frame" x="9" y="142" width="306" height="70"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BQh-Ix-LOJ" firstAttribute="leading" secondItem="IkG-gV-8XS" secondAttribute="trailing" constant="3" id="2vv-MQ-z0r"/>
+                    <constraint firstAttribute="trailing" secondItem="ycS-Lc-2Ys" secondAttribute="trailing" constant="9" id="5Oj-3p-p7C"/>
+                    <constraint firstAttribute="bottom" secondItem="Nrx-gd-esb" secondAttribute="bottom" constant="9" id="9z8-tS-fZX"/>
+                    <constraint firstItem="ycS-Lc-2Ys" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="TF9-he-Xpn"/>
+                    <constraint firstItem="TZ4-ex-USx" firstAttribute="top" secondItem="lzj-ah-OfP" secondAttribute="bottom" constant="3" id="VN3-zd-qzV"/>
+                    <constraint firstItem="IkG-gV-8XS" firstAttribute="top" secondItem="TZ4-ex-USx" secondAttribute="bottom" constant="3" id="WEj-bb-7dA"/>
+                    <constraint firstItem="TZ4-ex-USx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Wds-2K-LZC"/>
+                    <constraint firstAttribute="bottom" secondItem="BQh-Ix-LOJ" secondAttribute="bottom" constant="11.5" id="a1w-d6-sYr"/>
+                    <constraint firstAttribute="trailing" secondItem="Nrx-gd-esb" secondAttribute="trailing" constant="9" id="cyg-Ec-5Ku"/>
+                    <constraint firstItem="IkG-gV-8XS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="dyw-tC-sdi"/>
+                    <constraint firstAttribute="trailing" secondItem="TZ4-ex-USx" secondAttribute="trailing" id="kKY-e6-NLY"/>
+                    <constraint firstItem="Vgu-iY-Gi2" firstAttribute="leading" secondItem="TZ4-ex-USx" secondAttribute="trailing" constant="-315" id="mUe-dF-nHi"/>
+                    <constraint firstItem="x68-Om-ZZh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="oVE-sx-mno"/>
+                    <constraint firstItem="lzj-ah-OfP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="pIG-bG-5Q6"/>
+                    <constraint firstItem="Nrx-gd-esb" firstAttribute="top" secondItem="TZ4-ex-USx" secondAttribute="bottom" constant="3" id="qTX-Nu-Hrg"/>
+                    <constraint firstAttribute="bottom" secondItem="IkG-gV-8XS" secondAttribute="bottom" constant="9" id="r2I-KB-DE0"/>
+                    <constraint firstItem="BQh-Ix-LOJ" firstAttribute="top" secondItem="TZ4-ex-USx" secondAttribute="bottom" constant="14.5" id="rsv-XD-RXI"/>
+                    <constraint firstItem="lzj-ah-OfP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="teZ-g8-tDr"/>
+                    <constraint firstItem="Vgu-iY-Gi2" firstAttribute="leading" secondItem="TZ4-ex-USx" secondAttribute="trailing" constant="-315" id="uqJ-kc-Hgg"/>
+                    <constraint firstItem="x68-Om-ZZh" firstAttribute="top" secondItem="lzj-ah-OfP" secondAttribute="bottom" constant="12" id="wPc-or-h0q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backImage" destination="TZ4-ex-USx" id="Etb-5A-Nh7"/>
+                <outlet property="goodNum" destination="BQh-Ix-LOJ" id="req-1D-Ndn"/>
+                <outlet property="postDate" destination="lzj-ah-OfP" id="BFr-Sp-UxS"/>
+                <outlet property="poster" destination="Vgu-iY-Gi2" id="szu-3E-WqP"/>
+                <outlet property="userImage" destination="x68-Om-ZZh" id="wzf-0S-Lcc"/>
+                <outlet property="wiseSaying" destination="zV3-hm-vUU" id="3EJ-wr-UON"/>
+            </connections>
+            <point key="canvasLocation" x="46" y="65"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="GoodFalse.png" width="512" height="512"/>
+        <image name="Send.png" width="512" height="512"/>
+        <image name="Share.png" width="512" height="512"/>
+        <image name="Wismintest01.jpg" width="400" height="267"/>
+        <image name="Wismintest02.jpg" width="960" height="1053"/>
+    </resources>
+</document>

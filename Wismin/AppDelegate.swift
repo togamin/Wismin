@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //Firebaseの初期設定
         FirebaseApp.configure()
         //TwitterKitの初期設定
-        TWTRTwitter.sharedInstance().start(withConsumerKey:"", consumerSecret:"")
+        
         
         //ナビゲーションの背景色変更
         UINavigationBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
@@ -50,8 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             print("memo:テスト２")
             return false
     }
-
-    
     
 
     func applicationWillResignActive(_ application: UIApplication) {}

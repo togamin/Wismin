@@ -1,20 +1,20 @@
 //
-//  MainViewController.swift
+//  AllPostTableViewController.swift
 //  Wismin
 //
-//  Created by Togami Yuki on 2018/10/21.
+//  Created by Togami Yuki on 2018/10/22.
 //  Copyright © 2018 Togami Yuki. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class AllPostTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
     }
-    
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
@@ -29,15 +29,25 @@ class MainViewController: UIViewController {
             present(LoginViewController, animated: true, completion: nil)
         }
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
     }
 
+
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return 0
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
 }
