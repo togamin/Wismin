@@ -67,6 +67,8 @@ extension LoginViewController:GIDSignInUIDelegate,GIDSignInDelegate{
                 print("memo:FirebaseへGoogleから得たトークン保存時にエラー",error)
                 return
             }
+            UserDefaults.standard.set("check",forKey:"check")
+            self.dismiss(animated: true, completion: nil)
             print("memo:Googleログイン成功",authResult?.additionalUserInfo)
         }
     }
@@ -95,6 +97,8 @@ extension LoginViewController{
                         print("memo:FirebaseへTwitterから得たトークン保存時にエラー",error)
                         return
                     }
+                    UserDefaults.standard.set("check",forKey:"check")
+                    self.dismiss(animated: true, completion: nil)
                     print("memo:Twitterログイン成功")
                 }
             } else {

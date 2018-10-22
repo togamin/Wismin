@@ -15,6 +15,9 @@
 		B76D93552179D64E007FDA2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B76D93542179D64E007FDA2D /* GoogleService-Info.plist */; };
 		B76D93582179F127007FDA2D /* backImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76D93572179F127007FDA2D /* backImage.jpg */; };
 		B76D93602179F28B007FDA2D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D935F2179F28B007FDA2D /* LoginViewController.swift */; };
+		B76D9384217CB4ED007FDA2D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D9383217CB4ED007FDA2D /* MainViewController.swift */; };
+		B76D9386217DAE87007FDA2D /* postList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76D9385217DAE87007FDA2D /* postList.storyboard */; };
+		B76D9388217DB53A007FDA2D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D9387217DB53A007FDA2D /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		B76D93542179D64E007FDA2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B76D93572179F127007FDA2D /* backImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backImage.jpg; sourceTree = "<group>"; };
 		B76D935F2179F28B007FDA2D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = /Users/togamiyuki/Desktop/iOSdevelop/Wismin/Wismin/Wismin/LoginViewController.swift; sourceTree = "<absolute>"; };
+		B76D9383217CB4ED007FDA2D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B76D9385217DAE87007FDA2D /* postList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = postList.storyboard; sourceTree = "<group>"; };
+		B76D9387217DB53A007FDA2D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BCC29F0B171B4B487910C00F /* Pods_Wismin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wismin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +82,9 @@
 				B76D93422179D518007FDA2D /* AppDelegate.swift */,
 				B76D935F2179F28B007FDA2D /* LoginViewController.swift */,
 				B76D93462179D518007FDA2D /* Main.storyboard */,
+				B76D9387217DB53A007FDA2D /* TabBarViewController.swift */,
+				B76D9385217DAE87007FDA2D /* postList.storyboard */,
+				B76D9383217CB4ED007FDA2D /* MainViewController.swift */,
 				B76D93492179D51D007FDA2D /* Assets.xcassets */,
 				B76D934B2179D51D007FDA2D /* LaunchScreen.storyboard */,
 				B76D934E2179D51D007FDA2D /* Info.plist */,
@@ -163,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76D9386217DAE87007FDA2D /* postList.storyboard in Resources */,
 				B76D934D2179D51D007FDA2D /* LaunchScreen.storyboard in Resources */,
 				B76D93552179D64E007FDA2D /* GoogleService-Info.plist in Resources */,
 				B76D93582179F127007FDA2D /* backImage.jpg in Resources */,
@@ -249,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76D9388217DB53A007FDA2D /* TabBarViewController.swift in Sources */,
+				B76D9384217CB4ED007FDA2D /* MainViewController.swift in Sources */,
 				B76D93602179F28B007FDA2D /* LoginViewController.swift in Sources */,
 				B76D93432179D518007FDA2D /* AppDelegate.swift in Sources */,
 			);

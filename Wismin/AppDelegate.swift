@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //TwitterKitの初期設定
         TWTRTwitter.sharedInstance().start(withConsumerKey:"", consumerSecret:"")
         
+        //ナビゲーションの背景色変更
+        UINavigationBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
+        //ナビゲーションタイトル色変更
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        //ナビゲーションアイテムの色を変更
+        UINavigationBar.appearance().tintColor = .white
+        
         return true
     }
     
