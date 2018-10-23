@@ -26,6 +26,7 @@
 		B76D9398217DF862007FDA2D /* GoodTrue.png in Resources */ = {isa = PBXBuildFile; fileRef = B76D9396217DF861007FDA2D /* GoodTrue.png */; };
 		B76D9399217DF862007FDA2D /* GoodFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = B76D9397217DF862007FDA2D /* GoodFalse.png */; };
 		B76D939B217DFA99007FDA2D /* Send.png in Resources */ = {isa = PBXBuildFile; fileRef = B76D939A217DFA99007FDA2D /* Send.png */; };
+		B76D939D217E25D6007FDA2D /* backImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76D939C217E25D6007FDA2D /* backImage2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B76D9396217DF861007FDA2D /* GoodTrue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoodTrue.png; sourceTree = "<group>"; };
 		B76D9397217DF862007FDA2D /* GoodFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoodFalse.png; sourceTree = "<group>"; };
 		B76D939A217DFA99007FDA2D /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
+		B76D939C217E25D6007FDA2D /* backImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backImage2.jpg; sourceTree = "<group>"; };
 		BCC29F0B171B4B487910C00F /* Pods_Wismin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wismin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			children = (
 				B76D9391217DEE9B007FDA2D /* Icon */,
 				B76D93572179F127007FDA2D /* backImage.jpg */,
+				B76D939C217E25D6007FDA2D /* backImage2.jpg */,
 				B76D9394217DF4D2007FDA2D /* Wismintest02.jpg */,
 				B76D938F217DEDCF007FDA2D /* Wismintest01.jpg */,
 			);
@@ -211,6 +214,7 @@
 				B76D9399217DF862007FDA2D /* GoodFalse.png in Resources */,
 				B76D93582179F127007FDA2D /* backImage.jpg in Resources */,
 				B76D9398217DF862007FDA2D /* GoodTrue.png in Resources */,
+				B76D939D217E25D6007FDA2D /* backImage2.jpg in Resources */,
 				B76D938E217DE97B007FDA2D /* PostTableViewCell.xib in Resources */,
 				B76D934A2179D51D007FDA2D /* Assets.xcassets in Resources */,
 				B76D93482179D518007FDA2D /* Main.storyboard in Resources */,
