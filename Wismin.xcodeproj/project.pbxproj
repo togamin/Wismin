@@ -27,6 +27,8 @@
 		B76D9399217DF862007FDA2D /* GoodFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = B76D9397217DF862007FDA2D /* GoodFalse.png */; };
 		B76D939B217DFA99007FDA2D /* Send.png in Resources */ = {isa = PBXBuildFile; fileRef = B76D939A217DFA99007FDA2D /* Send.png */; };
 		B76D939D217E25D6007FDA2D /* backImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76D939C217E25D6007FDA2D /* backImage2.jpg */; };
+		B78039AA21843705002AF9E9 /* makePost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78039A921843705002AF9E9 /* makePost.storyboard */; };
+		B78039AC21843735002AF9E9 /* makePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78039AB21843735002AF9E9 /* makePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		B76D9397217DF862007FDA2D /* GoodFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoodFalse.png; sourceTree = "<group>"; };
 		B76D939A217DFA99007FDA2D /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
 		B76D939C217E25D6007FDA2D /* backImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backImage2.jpg; sourceTree = "<group>"; };
+		B78039A921843705002AF9E9 /* makePost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = makePost.storyboard; sourceTree = "<group>"; };
+		B78039AB21843735002AF9E9 /* makePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makePostViewController.swift; sourceTree = "<group>"; };
 		BCC29F0B171B4B487910C00F /* Pods_Wismin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wismin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 				B76D93422179D518007FDA2D /* AppDelegate.swift */,
 				B76D935F2179F28B007FDA2D /* LoginViewController.swift */,
 				B76D93462179D518007FDA2D /* Main.storyboard */,
+				B78039A921843705002AF9E9 /* makePost.storyboard */,
+				B78039AB21843735002AF9E9 /* makePostViewController.swift */,
 				B76D9387217DB53A007FDA2D /* TabBarViewController.swift */,
 				B76D9385217DAE87007FDA2D /* postList.storyboard */,
 				B76D938B217DE97B007FDA2D /* PostTableViewCell.swift */,
@@ -207,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78039AA21843705002AF9E9 /* makePost.storyboard in Resources */,
 				B76D9386217DAE87007FDA2D /* postList.storyboard in Resources */,
 				B76D934D2179D51D007FDA2D /* LaunchScreen.storyboard in Resources */,
 				B76D9395217DF4D2007FDA2D /* Wismintest02.jpg in Resources */,
@@ -256,8 +263,11 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -266,8 +276,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78039AC21843735002AF9E9 /* makePostViewController.swift in Sources */,
 				B76D938A217DD0A4007FDA2D /* AllPostTableViewController.swift in Sources */,
 				B76D9388217DB53A007FDA2D /* TabBarViewController.swift in Sources */,
 				B76D938D217DE97B007FDA2D /* PostTableViewCell.swift in Sources */,

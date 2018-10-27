@@ -70,11 +70,11 @@ class AllPostTableViewController: UITableViewController {
     }
     // セルの上部のスペース.一番上のやつだけなしにする処理が必要。
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     // セルの下部のスペース.一番下のやつだけなしにする処理が必要。
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
 

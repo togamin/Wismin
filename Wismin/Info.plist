@@ -66,5 +66,11 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSCameraUsageDescription</key>
+    <string>yourWording</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>yourWording</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>yourWording</string>
 </dict>
 </plist>

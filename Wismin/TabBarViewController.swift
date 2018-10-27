@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YPImagePicker
 
 class TabBarViewController: UITabBarController {
 
@@ -16,8 +17,58 @@ class TabBarViewController: UITabBarController {
         UITabBar.appearance().tintColor = .white
         //背景色
         UITabBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
+        
+        YPImagePickerConfig()
     }
+    
 
+    //投稿作成用のライブラリ等表示
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 1{
+            let picker = YPImagePicker()
+            picker.didFinishPicking { [unowned picker] items, cancelled in
+                for item in items {
+                    switch item {
+                    case .photo(let photo):
+                        print("phote",photo.image)
+                    case .video(let video):
+                        print("video",video)
+                    }
+                }
+                if cancelled {
+                    //「Cancel」ボタンが押された時の処理
+                    print("memo:「Cancel」ボタン")
+                    //ピッカーを消す
+                    picker.dismiss(animated: true, completion: nil)
+                    1
+                    //タグ番目の画面に遷移する
+                    self.selectedIndex = 0
+                }else{
+                    //「Next」ボタンが押された時の処理
+                    print("memo:「Next」ボタン")
+                }
+            }
+            present(picker, animated: true, completion: nil)
+        }
+    }
+    
+    //インスタ風ImagePickerの設定
+    func YPImagePickerConfig(){
+        var config = YPImagePickerConfiguration()
+        //ライブラリの写真を表示する際、1行に何枚写真を並べるか。
+        config.library.numberOfItemsInRow = 5
+        //どのスクリーンを最初に表示するか。
+        config.startOnScreen = .library
+        //ステータスバーを隠すかどうか
+        config.hidesStatusBar = false
+        //ナビゲーションの右側のボタン「Next」
+        config.colors.tintColor = .white
+        //写真を正方形にする
+        config.library.onlySquare  = true
+        //上記設定
+        YPImagePickerConfiguration.shared = config
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 

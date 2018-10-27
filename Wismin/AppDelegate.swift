@@ -24,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         
         //ナビゲーションの背景色変更
-        UINavigationBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
+        //ナビゲーションバーの背景画像
+        let coloredImage = UIImage(named:"backImage.jpg")
+        UINavigationBar.appearance().setBackgroundImage(coloredImage, for: UIBarMetrics.default)
         //ナビゲーションタイトル色変更
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         //ナビゲーションアイテムの色を変更

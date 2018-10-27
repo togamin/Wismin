@@ -20,6 +20,16 @@
             </objects>
             <point key="canvasLocation" x="-48" y="-143"/>
         </scene>
+        <!--makePost-->
+        <scene sceneID="QMz-OQ-BQc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="makePost" id="Rvs-Pu-QTT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="YpZ-Y8-3H8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1g-RF-pGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="144"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -64,11 +74,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="c0B-dY-6vT" customClass="TabBarViewController" customModule="Wismin" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NvH-Fa-hoA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Xhu-8d-0HL" kind="relationship" relationship="viewControllers" id="ayI-IY-tpd"/>
+                        <segue destination="Rvs-Pu-QTT" kind="relationship" relationship="viewControllers" id="3eQ-oj-8Wu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LoH-Sz-9do" userLabel="First Responder" sceneMemberID="firstResponder"/>

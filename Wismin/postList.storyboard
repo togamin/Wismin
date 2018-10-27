@@ -12,7 +12,7 @@
         <!--Item-->
         <scene sceneID="SXg-0a-zlv">
             <objects>
-                <tableViewController id="qbF-Dh-P6b" customClass="AllPostTableViewController" customModule="Wismin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllPostTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbF-Dh-P6b" customClass="AllPostTableViewController" customModule="Wismin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tt8-L4-Ekf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
