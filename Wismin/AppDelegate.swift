@@ -11,6 +11,11 @@ import Firebase
 import GoogleSignIn
 import TwitterKit
 
+//アプリの色設定用の変数
+var designNum:Int!
+var colorArray:[UIColor]!
+var backImageDesign:[UIImage]!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
     
@@ -23,11 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //TwitterKitの初期設定
         
         
+        
+        
+        //デザインの設定
+        colorArray = [UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 0.8),UIColor.purple]
+        backImageDesign = [UIImage(named: "backDesign01.jpg"),UIImage(named: "backDesign02.jpg")] as! [UIImage]
+        
+        //アプリのイメージカラー選択用の整数
+        if UserDefaults.standard.object(forKey:"ToDoArray") != nil{
+            designNum = UserDefaults.standard.object(forKey:"colorNum") as! Int
+        }else{
+            UserDefaults.standard.set(0, forKey:"colorNum")
+            designNum = UserDefaults.standard.object(forKey: "colorNum") as! Int
+        }
+        print("memo:",colorArray[designNum])
+        
         //ナビゲーションの背景色変更
 //        UINavigationBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
         //ナビゲーションバーの背景画像
-        let coloredImage = UIImage(named:"backImage.jpg")
-        UINavigationBar.appearance().setBackgroundImage(coloredImage, for: UIBarMetrics.default)
+        UINavigationBar.appearance().setBackgroundImage(backImageDesign[designNum], for: UIBarMetrics.default)
         //ナビゲーションタイトル色変更
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         //ナビゲーションアイテムの色を変更

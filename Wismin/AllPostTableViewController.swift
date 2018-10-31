@@ -8,7 +8,7 @@
 
 import UIKit
 
-var defaultColor:UIColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 0.8)
+
 
 class AllPostTableViewController: UITableViewController {
 
@@ -23,13 +23,13 @@ class AllPostTableViewController: UITableViewController {
         postData = ["userImage":"Wismintest02.jpg","postDate":"2018/10/22","goodNum":"100","sendNum":"150","backImage":"backImage.jpg","wiseSaying":"You look perfect tonight.","poster":"togaminnnn"]
         postDataList = [postData,postData,postData]
         
+        
         //xibファイルの設定
         let nib = UINib(nibName:"PostTableViewCell",bundle:nil)
         postTableView.register(nib, forCellReuseIdentifier: "postCell")
         postTableView.estimatedRowHeight = 250
         postTableView.rowHeight = UITableViewAutomaticDimension//自動的にセルの高さを調節する
         
-        //view.backgroundColor = viewColor
         
     }
     
@@ -95,7 +95,7 @@ class AllPostTableViewController: UITableViewController {
         //セルのレイアウト
         cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 1
-        cell.layer.borderColor = defaultColor.cgColor
+        //cell.layer.borderColor = defaultColor.cgColor
         // 影の設定
         cell.layer.shadowOpacity = 0.6
         cell.layer.shadowRadius = 9

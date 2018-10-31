@@ -29,6 +29,16 @@
 		B76D939D217E25D6007FDA2D /* backImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76D939C217E25D6007FDA2D /* backImage2.jpg */; };
 		B78039AA21843705002AF9E9 /* makePost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78039A921843705002AF9E9 /* makePost.storyboard */; };
 		B78039AC21843735002AF9E9 /* makePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78039AB21843735002AF9E9 /* makePostViewController.swift */; };
+		B7A1BE382185EB3700543B67 /* backDesign02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE372185EB3700543B67 /* backDesign02.jpg */; };
+		B7A1BE3A2185EB5900543B67 /* backDesign01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE392185EB5900543B67 /* backDesign01.jpg */; };
+		B7A1BE3C2186025900543B67 /* DidPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1BE3B2186025900543B67 /* DidPostViewController.swift */; };
+		B7A1BE3E21889EE700543B67 /* upFont.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE3D21889EE700543B67 /* upFont.png */; };
+		B7A1BE4021889EEC00543B67 /* downFont.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE3F21889EEC00543B67 /* downFont.png */; };
+		B7A1BE44218913D300543B67 /* ic_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE41218913D200543B67 /* ic_close@3x.png */; };
+		B7A1BE45218913D300543B67 /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE42218913D200543B67 /* ic_close.png */; };
+		B7A1BE46218913D300543B67 /* ic_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE43218913D300543B67 /* ic_close@2x.png */; };
+		B7A1BE48218927F400543B67 /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE47218927F400543B67 /* font.png */; };
+		B7A1BE4A21892A3200543B67 /* fontIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A1BE4921892A3100543B67 /* fontIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +67,16 @@
 		B76D939C217E25D6007FDA2D /* backImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backImage2.jpg; sourceTree = "<group>"; };
 		B78039A921843705002AF9E9 /* makePost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = makePost.storyboard; sourceTree = "<group>"; };
 		B78039AB21843735002AF9E9 /* makePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makePostViewController.swift; sourceTree = "<group>"; };
+		B7A1BE372185EB3700543B67 /* backDesign02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backDesign02.jpg; sourceTree = "<group>"; };
+		B7A1BE392185EB5900543B67 /* backDesign01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backDesign01.jpg; sourceTree = "<group>"; };
+		B7A1BE3B2186025900543B67 /* DidPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidPostViewController.swift; sourceTree = "<group>"; };
+		B7A1BE3D21889EE700543B67 /* upFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upFont.png; sourceTree = "<group>"; };
+		B7A1BE3F21889EEC00543B67 /* downFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downFont.png; sourceTree = "<group>"; };
+		B7A1BE41218913D200543B67 /* ic_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_close@3x.png"; sourceTree = "<group>"; };
+		B7A1BE42218913D200543B67 /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close.png; sourceTree = "<group>"; };
+		B7A1BE43218913D300543B67 /* ic_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_close@2x.png"; sourceTree = "<group>"; };
+		B7A1BE47218927F400543B67 /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
+		B7A1BE4921892A3100543B67 /* fontIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fontIcon.png; sourceTree = "<group>"; };
 		BCC29F0B171B4B487910C00F /* Pods_Wismin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wismin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +125,7 @@
 				B76D935F2179F28B007FDA2D /* LoginViewController.swift */,
 				B76D93462179D518007FDA2D /* Main.storyboard */,
 				B78039A921843705002AF9E9 /* makePost.storyboard */,
+				B7A1BE3B2186025900543B67 /* DidPostViewController.swift */,
 				B78039AB21843735002AF9E9 /* makePostViewController.swift */,
 				B76D9387217DB53A007FDA2D /* TabBarViewController.swift */,
 				B76D9385217DAE87007FDA2D /* postList.storyboard */,
@@ -123,11 +144,20 @@
 		B76D93562179F10A007FDA2D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B76D9391217DEE9B007FDA2D /* Icon */,
 				B76D93572179F127007FDA2D /* backImage.jpg */,
+				B7A1BE392185EB5900543B67 /* backDesign01.jpg */,
+				B7A1BE372185EB3700543B67 /* backDesign02.jpg */,
+				B76D9391217DEE9B007FDA2D /* Icon */,
 				B76D939C217E25D6007FDA2D /* backImage2.jpg */,
 				B76D9394217DF4D2007FDA2D /* Wismintest02.jpg */,
 				B76D938F217DEDCF007FDA2D /* Wismintest01.jpg */,
+				B7A1BE3D21889EE700543B67 /* upFont.png */,
+				B7A1BE3F21889EEC00543B67 /* downFont.png */,
+				B7A1BE42218913D200543B67 /* ic_close.png */,
+				B7A1BE43218913D300543B67 /* ic_close@2x.png */,
+				B7A1BE41218913D200543B67 /* ic_close@3x.png */,
+				B7A1BE47218927F400543B67 /* font.png */,
+				B7A1BE4921892A3100543B67 /* fontIcon.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -219,15 +249,24 @@
 				B76D9395217DF4D2007FDA2D /* Wismintest02.jpg in Resources */,
 				B76D93552179D64E007FDA2D /* GoogleService-Info.plist in Resources */,
 				B76D9399217DF862007FDA2D /* GoodFalse.png in Resources */,
+				B7A1BE45218913D300543B67 /* ic_close.png in Resources */,
 				B76D93582179F127007FDA2D /* backImage.jpg in Resources */,
 				B76D9398217DF862007FDA2D /* GoodTrue.png in Resources */,
 				B76D939D217E25D6007FDA2D /* backImage2.jpg in Resources */,
+				B7A1BE48218927F400543B67 /* font.png in Resources */,
+				B7A1BE3E21889EE700543B67 /* upFont.png in Resources */,
 				B76D938E217DE97B007FDA2D /* PostTableViewCell.xib in Resources */,
+				B7A1BE4021889EEC00543B67 /* downFont.png in Resources */,
+				B7A1BE3A2185EB5900543B67 /* backDesign01.jpg in Resources */,
 				B76D934A2179D51D007FDA2D /* Assets.xcassets in Resources */,
 				B76D93482179D518007FDA2D /* Main.storyboard in Resources */,
+				B7A1BE382185EB3700543B67 /* backDesign02.jpg in Resources */,
 				B76D9390217DEDCF007FDA2D /* Wismintest01.jpg in Resources */,
 				B76D9393217DEF8D007FDA2D /* Share.png in Resources */,
+				B7A1BE44218913D300543B67 /* ic_close@3x.png in Resources */,
 				B76D939B217DFA99007FDA2D /* Send.png in Resources */,
+				B7A1BE46218913D300543B67 /* ic_close@2x.png in Resources */,
+				B7A1BE4A21892A3200543B67 /* fontIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +298,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wismin/Pods-Wismin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DPPickerManager/DPPickerManager.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -272,6 +312,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DPPickerManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -321,6 +362,7 @@
 				B76D938D217DE97B007FDA2D /* PostTableViewCell.swift in Sources */,
 				B76D93602179F28B007FDA2D /* LoginViewController.swift in Sources */,
 				B76D93432179D518007FDA2D /* AppDelegate.swift in Sources */,
+				B7A1BE3C2186025900543B67 /* DidPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

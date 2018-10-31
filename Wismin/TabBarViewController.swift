@@ -11,12 +11,14 @@ import YPImagePicker
 
 class TabBarViewController: UITabBarController {
 
+    var sendPhoto:UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //アイコン色
         UITabBar.appearance().tintColor = .white
         //背景色
-        UITabBar.appearance().barTintColor = UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 1.0)
+        UITabBar.appearance().barTintColor = colorArray[designNum]
         
         YPImagePickerConfig()
     }
@@ -31,6 +33,7 @@ class TabBarViewController: UITabBarController {
                     switch item {
                     case .photo(let photo):
                         print("phote",photo.image)
+                        self.sendPhoto = photo.image
                     case .video(let video):
                         print("video",video)
                     }
@@ -40,12 +43,16 @@ class TabBarViewController: UITabBarController {
                     print("memo:「Cancel」ボタン")
                     //ピッカーを消す
                     picker.dismiss(animated: true, completion: nil)
-                    1
+                    
                     //タグ番目の画面に遷移する
                     self.selectedIndex = 0
                 }else{
                     //「Next」ボタンが押された時の処理
                     print("memo:「Next」ボタン")
+                    let storyboard = UIStoryboard(name: "makePost", bundle: nil)
+                    let makePostViewController = storyboard.instantiateViewController(withIdentifier:"makePostViewController") as! makePostViewController
+                    makePostViewController.getPhoto = self.sendPhoto
+                    picker.pushViewController(makePostViewController, animated: true)
                 }
             }
             present(picker, animated: true, completion: nil)
