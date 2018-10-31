@@ -9,8 +9,12 @@
 import UIKit
 import DPPickerManager
 
+
 class makePostViewController: UIViewController,UITabBarDelegate {
 
+    var scrollView:UIScrollView!
+    var InspireLabel:UILabel!
+    
     var getPhoto:UIImage!
     var postImageView:UIImageView!
     
@@ -22,6 +26,11 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     @IBOutlet weak var viewDesign02: UIView!
     @IBOutlet weak var fontChange: UIButton!
     var fontLabel:UILabel!
+    var tag:Int!
+    var taptag:Int!
+    //var tapGesture:UITapGestureRecognizer!
+    //var moveGesture:UIPanGestureRecognizer!
+    var inspireList:[UILabel] = []
     
     
     //スクリーンのサイズを入れる変数
@@ -31,19 +40,25 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tag = 0
+        
         //スクリーンのサイズ取得
         screenWidth = UIScreen.main.bounds.size.width
         screenHeight = UIScreen.main.bounds.size.height
         
         // UIScrollViewインスタンス生成
-        var scrollView = UIScrollView()
+        scrollView = UIScrollView()
         
         // UIScrollViewのサイズと位置を設定
-        scrollView.frame.size =
-            CGSize(width: screenWidth, height: screenHeight)
-        scrollView.center = self.view.center
+        scrollView.frame =
+            CGRect(x:0,y:screenWidth,width: screenWidth, height: screenHeight)
+        //scrollView.center = self.view.center
         
         print("memo:getPhoto",getPhoto)
+        
+        //ジェスチャー
+//        var tapGesture = UITapGestureRecognizer(target: self, action: #selector(makePostViewController.labelTap(_:)))
+//        var moveGesture = UIPanGestureRecognizer(target: self, action: #selector(makePostViewController.labelMove(_:)))
         
         if getPhoto != nil {
             
@@ -59,15 +74,17 @@ class makePostViewController: UIViewController,UITabBarDelegate {
             
             //選択した写真を表示するUIImageView
             postImageView = UIImageView()
+            postImageView.tag = -1
+            postImageView.isUserInteractionEnabled = true
             postImageView.frame = CGRect(x: 0, y: 0, width:screenWidth , height: screenWidth)
             postImageView.image = getPhoto
             postImageView.contentMode = .scaleAspectFill
-            scrollView.addSubview(postImageView)
+            view.addSubview(postImageView)
             
             //UITextView等入れるView
             viewDesign01.backgroundColor = UIColor.lightGray
             viewDesign01.layer.cornerRadius = 5
-            viewDesign01.frame = CGRect(x: 10, y: screenWidth + 10, width: screenWidth - 20, height: InspireTextViewHeight + addTextBtnHeight + 25)
+            viewDesign01.frame = CGRect(x: 10, y: 10, width: screenWidth - 20, height: InspireTextViewHeight + addTextBtnHeight + 25)
             scrollView.addSubview(viewDesign01)
             
             //文字を入力するUITextView
@@ -83,7 +100,7 @@ class makePostViewController: UIViewController,UITabBarDelegate {
             addTextBtn.frame = CGRect(x:viewDesign01.frame.size.width - addTextBtnWidth - 10, y: InspireTextViewHeight + 15, width: addTextBtnWidth, height: addTextBtnHeight)
             viewDesign01.addSubview(addTextBtn)
             
-            let underAddY = screenWidth + 20 + viewDesign01.frame.size.height
+            let underAddY = 20 + viewDesign01.frame.size.height
             
             //デザインボード
             viewDesign02.backgroundColor = UIColor.lightGray
@@ -158,17 +175,33 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     }
     
     //ボタンを押すとTextViewの情報を画像の上へ
+    //Viewを用意する必要があるかどうかの検討
     @IBAction func addTextBtn(_ sender: UIButton) {
         print("ラベル追加")
-        let InspireLabel = UILabel()
+        InspireLabel = UILabel()
+        InspireLabel.tag = tag
+        tag = tag + 1
+        print("memo:tag",InspireLabel.tag)
+        inspireList.append(InspireLabel)
+        
+        //ジェスチャー機能
+        var tapGesture = UITapGestureRecognizer(target: self, action: #selector(makePostViewController.labelTap(_:)))
+        var moveGesture = UIPanGestureRecognizer(target: self, action: #selector(makePostViewController.labelMove(_:)))
+        InspireLabel.isUserInteractionEnabled = true
+        InspireLabel.addGestureRecognizer(tapGesture)
+        InspireLabel.addGestureRecognizer(moveGesture)
+        
         let InspireLabelWidth = screenWidth - 40
         InspireLabel.textAlignment = .center
         InspireLabel.numberOfLines = 0
         InspireLabel.textColor = UIColor.white
         InspireLabel.font = UIFont.italicSystemFont(ofSize: 36)
-        //InspireLabel.center = postImageView.center
-        InspireLabel.frame = CGRect(x: postImageView.center.x - InspireLabelWidth/2, y: postImageView.center.y - InspireLabelWidth/2, width: InspireLabelWidth, height: InspireLabelWidth)
         InspireLabel.text = InspireTextView.text
+        
+        InspireLabel.sizeToFit()
+        
+        InspireLabel.frame = CGRect(x: postImageView.center.x - InspireLabelWidth/2, y: postImageView.center.y - InspireLabel.frame.size.height, width: InspireLabelWidth, height: InspireLabel.frame.size.height)
+        
         postImageView.addSubview(InspireLabel)
     }
     //Font変更用ボタン
@@ -206,6 +239,7 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     }
     
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -217,6 +251,26 @@ extension makePostViewController{
         
     }
 }
+
+//ラベルをタッチした時の処理に関して
+var touchTag:Int!
+extension makePostViewController{
+    @objc func labelTap(_ sender: UITapGestureRecognizer){
+        let view = sender.view
+        touchTag = view?.tag
+        print("memo:touchTag",touchTag)
+//        if touchTag! >= 0{
+//            print("memo:tag",touchTag)
+//            view?.center = sender.location(in: postImageView)
+//        }
+    }
+    @objc func labelMove(_ sender: UIPanGestureRecognizer){
+        var view = sender.view
+        view?.center = sender.location(in: postImageView)
+    }
+}
+
+
 
 //キーボードに関する処理
 extension makePostViewController{
