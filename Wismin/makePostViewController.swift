@@ -26,11 +26,22 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     @IBOutlet weak var viewDesign02: UIView!
     @IBOutlet weak var fontChange: UIButton!
     var fontLabel:UILabel!
+    var fontStyle:String!
     var tag:Int!
     var taptag:Int!
-    //var tapGesture:UITapGestureRecognizer!
-    //var moveGesture:UIPanGestureRecognizer!
     var inspireList:[UILabel] = []
+    var touchTag:Int!//タップしたラベルのタグが入る
+    
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
+    
+    //色初期値
+    var r = CGFloat(1.0)
+    var g = CGFloat(1.0)
+    var b = CGFloat(1.0)
+    var a = CGFloat(1.0)
+    
     
     
     //スクリーンのサイズを入れる変数
@@ -40,7 +51,7 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tag = 0
+        
         
         //スクリーンのサイズ取得
         screenWidth = UIScreen.main.bounds.size.width
@@ -55,10 +66,6 @@ class makePostViewController: UIViewController,UITabBarDelegate {
         //scrollView.center = self.view.center
         
         print("memo:getPhoto",getPhoto)
-        
-        //ジェスチャー
-//        var tapGesture = UITapGestureRecognizer(target: self, action: #selector(makePostViewController.labelTap(_:)))
-//        var moveGesture = UIPanGestureRecognizer(target: self, action: #selector(makePostViewController.labelMove(_:)))
         
         if getPhoto != nil {
             
@@ -105,7 +112,7 @@ class makePostViewController: UIViewController,UITabBarDelegate {
             //デザインボード
             viewDesign02.backgroundColor = UIColor.lightGray
             viewDesign02.layer.cornerRadius = 5
-            viewDesign02.frame = CGRect(x: 10, y: underAddY, width: screenWidth - 20, height: height02*2 + 30)
+            viewDesign02.frame = CGRect(x: 10, y: underAddY, width: screenWidth - 20, height: height02*5 + 45)
             scrollView.addSubview(viewDesign02)
             
             //Font選択
@@ -162,6 +169,26 @@ class makePostViewController: UIViewController,UITabBarDelegate {
             downFontBtn.tintColor = .white
             viewDesign02.addSubview(downFontBtn)
             
+            //文字色変更用スライダー
+            redSlider.frame = CGRect(x: fontSizeLabelWidth + 10, y: height02*2 + 30, width: viewDesign02.frame.size.width - 20 - fontSizeLabelWidth, height: height02)
+            redSlider.minimumValue = 0
+            redSlider.maximumValue = 1
+            redSlider.value = 1
+            redSlider.tag = 0
+            viewDesign02.addSubview(redSlider)
+            greenSlider.frame = CGRect(x: fontSizeLabelWidth + 10, y: height02*3 + 35, width: viewDesign02.frame.size.width - 20 - fontSizeLabelWidth, height: height02)
+            greenSlider.minimumValue = 0
+            greenSlider.maximumValue = 1
+            greenSlider.value = 1
+            greenSlider.tag = 1
+            viewDesign02.addSubview(greenSlider)
+            blueSlider.frame = CGRect(x: fontSizeLabelWidth + 10, y: height02*4 + 40, width: viewDesign02.frame.size.width - 20 - fontSizeLabelWidth, height: height02)
+            blueSlider.minimumValue = 0
+            blueSlider.maximumValue = 1
+            blueSlider.value = 1
+            blueSlider.tag = 2
+            viewDesign02.addSubview(blueSlider)
+            
             
         }
         
@@ -173,6 +200,19 @@ class makePostViewController: UIViewController,UITabBarDelegate {
         //キーボードに「Done」を表示
         keyBoardDone()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tag = 0
+        print("memo:test")
+        NotificationCenter.default.addObserver(self,selector: #selector(self.keyboardWillShow(notification:)),name: NSNotification.Name.UIKeyboardWillShow,object: nil)
+        NotificationCenter.default.addObserver(self,selector: #selector(self.keyboardWillHide(notification:)),name: NSNotification.Name.UIKeyboardWillHide,object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name.UIKeyboardWillShow,object: nil)
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name.UIKeyboardWillHide,object: nil)
+    }
+    
     
     //ボタンを押すとTextViewの情報を画像の上へ
     //Viewを用意する必要があるかどうかの検討
@@ -180,9 +220,11 @@ class makePostViewController: UIViewController,UITabBarDelegate {
         print("ラベル追加")
         InspireLabel = UILabel()
         InspireLabel.tag = tag
+        touchTag = tag
         tag = tag + 1
         print("memo:tag",InspireLabel.tag)
         inspireList.append(InspireLabel)
+        print("memo:InsporeList",inspireList)
         
         //ジェスチャー機能
         var tapGesture = UITapGestureRecognizer(target: self, action: #selector(makePostViewController.labelTap(_:)))
@@ -193,9 +235,13 @@ class makePostViewController: UIViewController,UITabBarDelegate {
         
         let InspireLabelWidth = screenWidth - 40
         InspireLabel.textAlignment = .center
-        InspireLabel.numberOfLines = 0
-        InspireLabel.textColor = UIColor.white
-        InspireLabel.font = UIFont.italicSystemFont(ofSize: 36)
+        InspireLabel.numberOfLines = 1
+        InspireLabel.textColor = UIColor(displayP3Red: r, green: g, blue: b, alpha: a)
+        if fontStyle != nil{
+            InspireLabel.font = UIFont(name: fontStyle, size: 29)
+        }else{
+            InspireLabel.font = UIFont.italicSystemFont(ofSize: 29)
+        }
         InspireLabel.text = InspireTextView.text
         
         InspireLabel.sizeToFit()
@@ -207,12 +253,19 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     //Font変更用ボタン
     @IBAction func fontChange(_ sender: UIButton) {
         print("memo:Picker起動")
-        let fontName = ["Zapfino","DBLCDTempBlack","MarkerFelt-Thin","AppleSDGothicNeo-Regular"]
+        let fontName = ["Zapfino","DBLCDTempBlack","MarkerFelt-Thin"]
         DPPickerManager.shared.showPicker(title: "Strings Picker", selected: "Value 1", strings: fontName) { (value, index, cancel) in
             if !cancel {
                 // TODO: you code here
-                self.fontLabel.text = value!
+                self.fontStyle = value!
+                self.fontLabel.text = self.fontStyle
                 self.fontLabel.font = UIFont(name: value!, size: 13)
+                print("memo:InspireListの数",self.inspireList.count)
+                print("memo:tag",self.touchTag)
+                if self.inspireList.count != 0 && self.touchTag != nil{
+                    self.inspireList[self.touchTag].font = UIFont(name: value!, size:self.inspireList[self.touchTag].font.pointSize)
+                    self.inspireList[self.touchTag].sizeToFit()
+                }
             }
         }
         print("memo:Picker起動完了")
@@ -221,11 +274,35 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     
     //文字のサイズ変更用のボタン
     @IBAction func upFontSize(_ sender: UIButton) {
-        
+        var nowFontSize = self.inspireList[self.touchTag].font.pointSize
+        print(nowFontSize)
+        self.inspireList[self.touchTag].font = self.inspireList[self.touchTag].font.withSize(nowFontSize + 1)
+        self.inspireList[self.touchTag].sizeToFit()
     }
     @IBAction func downFontSize(_ sender: UIButton) {
-        
+        var nowFontSize = self.inspireList[self.touchTag].font.pointSize
+        print(nowFontSize)
+        self.inspireList[self.touchTag].font = self.inspireList[self.touchTag].font.withSize(nowFontSize - 1)
+        self.inspireList[self.touchTag].sizeToFit()
     }
+    
+    
+    @IBAction func changeColorSlider(_ sender: UISlider) {
+        print("memo:",sender.value)
+        switch sender.tag {
+        case 0:
+            r = CGFloat(sender.value)
+        case 1:
+            g = CGFloat(sender.value)
+        case 2:
+            b = CGFloat(sender.value)
+        default:
+            break
+        }
+        self.inspireList[self.touchTag].textColor = UIColor(displayP3Red: r, green: g, blue: b, alpha: 1)
+    }
+    
+
     
     
     @IBAction func postBtn(_ sender: UIBarButtonItem) {
@@ -245,24 +322,14 @@ class makePostViewController: UIViewController,UITabBarDelegate {
     }
 }
 
-//UILabelの文字のデザインに関する処理
-extension makePostViewController{
-    func moziDesign(){
-        
-    }
-}
+
 
 //ラベルをタッチした時の処理に関して
-var touchTag:Int!
 extension makePostViewController{
     @objc func labelTap(_ sender: UITapGestureRecognizer){
         let view = sender.view
         touchTag = view?.tag
         print("memo:touchTag",touchTag)
-//        if touchTag! >= 0{
-//            print("memo:tag",touchTag)
-//            view?.center = sender.location(in: postImageView)
-//        }
     }
     @objc func labelMove(_ sender: UIPanGestureRecognizer){
         var view = sender.view
@@ -288,6 +355,21 @@ extension makePostViewController{
     }
     @objc func closeKeybord(_ sender:Any){
         self.view.endEditing(true)
+    }
+    
+    //キーボードが表示された時に呼ばれる
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if scrollView.isScrollEnabled{
+            print("memo:keyBoardShow")
+            scrollView.center.y -= 189
+            scrollView.isScrollEnabled = false
+        }
+    }
+    //キーボードが閉じる時に呼ばれる
+    @objc func keyboardWillHide(notification: NSNotification) {
+        print("memo:keyBoardHide")
+        scrollView.center.y += 189
+        scrollView.isScrollEnabled = true
     }
 }
 

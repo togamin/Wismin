@@ -59,6 +59,29 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-fN-9uC">
                                 <rect key="frame" x="12" y="472" width="352" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nCl-ug-Ddf">
+                                        <rect key="frame" x="6" y="27" width="340" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="changeColorSlider:" destination="d9k-F0-8NN" eventType="valueChanged" id="0k9-5Q-2CL"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9nS-tR-Amz">
+                                        <rect key="frame" x="6" y="91" width="340" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="changeColorSlider:" destination="d9k-F0-8NN" eventType="valueChanged" id="LqB-YW-CtP"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cjz-HQ-NWO">
+                                        <rect key="frame" x="6" y="64" width="340" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="changeColorSlider:" destination="d9k-F0-8NN" eventType="valueChanged" id="enf-wK-g0H"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KQ-vH-8N2">
@@ -84,8 +107,11 @@
                     <connections>
                         <outlet property="InspireTextView" destination="fVz-8A-Ok0" id="kYC-Ib-6yS"/>
                         <outlet property="addTextBtn" destination="Ywt-0C-OHy" id="TiV-X3-PmS"/>
+                        <outlet property="blueSlider" destination="9nS-tR-Amz" id="FBI-Ce-AEW"/>
                         <outlet property="downFontBtn" destination="rPB-eZ-Abg" id="cno-MZ-Cyi"/>
                         <outlet property="fontChange" destination="5KQ-vH-8N2" id="j2K-fi-8F7"/>
+                        <outlet property="greenSlider" destination="cjz-HQ-NWO" id="iPw-ig-wgS"/>
+                        <outlet property="redSlider" destination="nCl-ug-Ddf" id="jpE-VP-FFd"/>
                         <outlet property="upFontBtn" destination="3JW-le-GeB" id="Cid-o2-yMK"/>
                         <outlet property="viewDesign01" destination="mv0-Oq-rSU" id="HO0-pB-4fS"/>
                         <outlet property="viewDesign02" destination="nTM-fN-9uC" id="p6x-Ls-Bmy"/>

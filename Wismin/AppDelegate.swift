@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         
         
-        
         //デザインの設定
         colorArray = [UIColor(red: 9/255, green: 0, blue: 54/255, alpha: 0.8),UIColor.purple]
         backImageDesign = [UIImage(named: "backDesign01.jpg"),UIImage(named: "backDesign02.jpg")] as! [UIImage]
